@@ -40,13 +40,13 @@ export default class Router extends Component {
 										<Route path="/admin/ui/carousel" component={Carousels} />
 										<Route path="/admin/form/login" component={FormLogin} />
 										<Route path="/admin/form/reg" component={Register} />
-										<Route component={NoMatch} />
+										{/* <Route component={NoMatch} /> */}
 										<Redirect to="/admin/home" />
 									</Switch>
 								</Admin>
 							)}
 						/>
-            <Redirect to="/login"></Redirect>
+            <Redirect to="/login" />
 					</Switch>
 				</App>
 			</HashRouter>

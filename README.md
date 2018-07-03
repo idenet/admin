@@ -15,3 +15,12 @@
 ## 现在
 
 直接返回menuConfig，删选competence不为0的是普通用户，为0的是管理员
+
+## 疑问
+
+为什么一起是用
+```
+<Route component={NoMatch} />
+<Redirect to="/admin/home" />
+```
+的时候进入首页是显示的 noMatch，而不是home

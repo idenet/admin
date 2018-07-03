@@ -1,22 +1,25 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
-import MenuConfig from '../../config/menuConfig'
+// import MenuConfig from '../../config/menuConfig'
 import './Navleft.less'
+
+import { connect } from 'react-redux'
 
 import { Menu } from 'antd'
 const SubMenu = Menu.SubMenu
 
-export default class Navleft extends Component {
-  constructor() {
-    super()
+class Navleft extends Component {
+  constructor(props) {
+    super(props)
     this.state = {
       menuTreeNode: []
     }
   }
 
   componentDidMount() {
-    const menuTreeNode = this.renderMenu(MenuConfig)
+    console.log(this.props)
+    const menuTreeNode = this.renderMenu(this.props.menu)
     this.setState({
       menuTreeNode
     })
@@ -50,3 +53,5 @@ export default class Navleft extends Component {
     )
   }
 }
+
+export default connect(state => state)(Navleft)
